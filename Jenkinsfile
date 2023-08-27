@@ -52,7 +52,7 @@ pipeline{
         stage('Sonarqube'){
             steps{
                 withSonarQubeEnv(installationName: 'SonarQube', credentialsId: 'sonar-jenkins') {
-                    sh 'sonar:sonar'
+                    sh 'mvn sonar:sonar'
                 }
             }
         }
